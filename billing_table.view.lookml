@@ -83,8 +83,12 @@
 
   - dimension: ut_name
     sql: ${TABLE}.ut_name
-
+    
   - dimension: ut_nucleatorcage
+    sql: ${TABLE}.ut_nucleatorcage
+
+  - measure: ut_nucleatorcage_count
+    type: count_distinct
     sql: ${TABLE}.ut_nucleatorcage
 
   - dimension: ut_nucleatorcustomer
