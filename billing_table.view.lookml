@@ -5,10 +5,10 @@
   - dimension: availabilityzone
     sql: ${TABLE}.availabilityzone
 
-  - dimension: blendedcost
-    type: number
+  - measure: blendedcost
+    type: sum
     sql: ${TABLE}.blendedcost
-
+    
   - dimension: blendedrate
     type: number
     sql: ${TABLE}.blendedrate
@@ -51,9 +51,13 @@
 
   - dimension: subscriptionid
     sql: ${TABLE}.subscriptionid
-
-  - dimension: unblendedcost
+    
+  - dimension: unblendedcost_values
     type: number
+    sql: ${TABLE}.unblendedcost
+    
+  - measure: unblendedcost
+    type: sum
     sql: ${TABLE}.unblendedcost
 
   - dimension: unblendedrate
@@ -62,7 +66,7 @@
 
   - dimension_group: usageenddate
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [time, date, week, month, year]
     sql: ${TABLE}.usageenddate
 
   - dimension: usagequantity
@@ -79,8 +83,12 @@
 
   - dimension: ut_name
     sql: ${TABLE}.ut_name
-
+    
   - dimension: ut_nucleatorcage
+    sql: ${TABLE}.ut_nucleatorcage
+
+  - measure: ut_nucleatorcage_count
+    type: count_distinct
     sql: ${TABLE}.ut_nucleatorcage
 
   - dimension: ut_nucleatorcustomer
