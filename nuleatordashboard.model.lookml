@@ -6,5 +6,3 @@
 - explore: billing_table
 
 
-
-
