@@ -51,7 +51,11 @@
 
   - dimension: subscriptionid
     sql: ${TABLE}.subscriptionid
-
+    
+  - dimension: unblendedcost_values
+    type: number
+    sql: ${TABLE}.unblendedcost
+    
   - measure: unblendedcost
     type: sum
     sql: ${TABLE}.unblendedcost
