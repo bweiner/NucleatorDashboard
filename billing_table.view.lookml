@@ -5,10 +5,10 @@
   - dimension: availabilityzone
     sql: ${TABLE}.availabilityzone
 
-  - dimension: blendedcost
-    type: number
+  - measure: blendedcost
+    type: sum
     sql: ${TABLE}.blendedcost
-
+    
   - dimension: blendedrate
     type: number
     sql: ${TABLE}.blendedrate
@@ -52,8 +52,8 @@
   - dimension: subscriptionid
     sql: ${TABLE}.subscriptionid
 
-  - dimension: unblendedcost
-    type: number
+  - measure: unblendedcost
+    type: sum
     sql: ${TABLE}.unblendedcost
 
   - dimension: unblendedrate
@@ -62,7 +62,7 @@
 
   - dimension_group: usageenddate
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [time, date, week, month, year]
     sql: ${TABLE}.usageenddate
 
   - dimension: usagequantity
