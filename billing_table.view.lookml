@@ -21,6 +21,9 @@
 
   - dimension: linkedaccountid
     sql: ${TABLE}.linkedaccountid
+    
+  - dimension: account_id
+    sql: CAST(LEFT(${TABLE}.linkedaccountid, 3) AS INT) 
 
   - dimension: operation
     sql: ${TABLE}.operation
