@@ -1,5 +1,5 @@
 - view: billing_table
-  sql_table_name: public.billing_table
+  sql_table_name: public.billing_table 
   fields:
 
   - dimension: availabilityzone
@@ -23,7 +23,7 @@
     sql: ${TABLE}.linkedaccountid
     
   - dimension: account_id
-    sql: CAST(LEFT(${TABLE}.linkedaccountid, 3) AS INT) 
+    sql: LEFT(${TABLE}.linkedaccountid, 3)
 
   - dimension: operation
     sql: ${TABLE}.operation
